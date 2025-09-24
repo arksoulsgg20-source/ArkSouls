@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArkSouls - Recrutamento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ark-orange': '#FF6B35',
+                        'ark-orange-dark': '#E55A2B',
+                        'ark-black': '#0F0F0F',
+                        'ark-gray': '#1A1A1A'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .glow-orange {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
+        }
+        
+        .bg-gradient-ark {
+            background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 50%, #FF6B35 100%);
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-ark-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-ark-gray border-b-2 border-ark-orange">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-ark-orange rounded-lg flex items-center justify-center">
+                        <span class="text-2xl font-black text-ark-black">AS</span>
+                    </div>
+                    <h1 class="text-3xl font-black text-glow">ArkSouls</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-ark-orange transition-colors">Início</a>
+                    <a href="#requisitos" class="hover:text-ark-orange transition-colors">Requisitos</a>
+                    <a href="#formulario" class="hover:text-ark-orange transition-colors">Inscrever-se</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-ark py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-6xl font-black mb-6 text-glow animate-pulse-slow">JUNTE-SE À ELITE</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">A ArkSouls está procurando jogadores excepcionais para formar a equipe mais temida do Free Fire. Você tem o que é preciso?</p>
+            <button onclick="document.getElementById('formulario').scrollIntoView({behavior: 'smooth'})" class="bg-ark-orange hover:bg-ark-orange-dark text-ark-black font-bold py-4 px-8 rounded-lg text-xl glow-orange transition-all duration-300 transform hover:scale-105">
+                CANDIDATAR-SE AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- Requisitos Section -->
+    <section id="requisitos" class="py-16 bg-ark-gray">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-black text-center mb-12 text-ark-orange">REQUISITOS PARA ENTRADA</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-ark-black p-6 rounded-lg border border-ark-orange hover:glow-orange transition-all duration-300">
+                    <div class="text-3xl mb-4">🎮</div>
+                    <h4 class="text-xl font-bold mb-3 text-ark-orange">Experiência</h4>
+                    <p>Pelo menos 6 meses jogando competitivamente</p>
+                </div>
+                <div class="bg-ark-black p-6 rounded-lg border border-ark-orange hover:glow-orange transition-all duration-300">
+                    <div class="text-3xl mb-4">🎤</div>
+                    <h4 class="text-xl font-bold mb-3 text-ark-orange">Comunicação</h4>
+                    <p>Microfone obrigatório e boa comunicação em equipe</p>
+                </div>
+                <div class="bg-ark-black p-6 rounded-lg border border-ark-orange hover:glow-orange transition-all duration-300">
+                    <div class="text-3xl mb-4">⏰</div>
+                    <h4 class="text-xl font-bold mb-3 text-ark-orange">Disponibilidade</h4>
+                    <p>Treinos 3x por semana (19h às 22h)</p>
+                </div>
+                <div class="bg-ark-black p-6 rounded-lg border border-ark-orange hover:glow-orange transition-all duration-300">
+                    <div class="text-3xl mb-4">🏆</div>
+                    <h4 class="text-xl font-bold mb-3 text-ark-orange">Mentalidade</h4>
+                    <p>Foco em competições e crescimento constante</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Inscrição -->
+    <section id="formulario" class="py-16 bg-ark-black">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h3 class="text-4xl font-black text-center mb-12 text-ark-orange">FORMULÁRIO DE INSCRIÇÃO</h3>
+            <form id="recruitmentForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-ark-orange">Nome no Jogo (ID)</label>
+                    <input type="text" name="nome" required class="w-full px-4 py-3 bg-ark-gray border border-ark-orange rounded-lg focus:outline-none focus:ring-2 focus:ring-ark-orange text-white">
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-ark-orange">Idade</label>
+                        <input type="number" name="idade" min="16" max="30" required class="w-full px-4 py-3 bg-ark-gray border border-ark-orange rounded-lg focus:outline-none focus:ring-2 focus:ring-ark-orange text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-ark-orange">Sua intenção na equipe</label>
+                        <select name="rank" required class="w-full px-4 py-3 bg-ark-gray border border-ark-orange rounded-lg focus:outline-none focus:ring-2 focus:ring-ark-orange text-white">
+                            <option value="">Selecione</option>
+                            <option value="heroico">Melhorar como Player</option>
+                            <option value="grandmaster">Pegar experiência</option>
+                            <option value="desafiante">Agregar a equipe AS</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-4 text-ark-orange text-lg">Qual posição você quer jogar na equipe?</label>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-ark-gray border-2 border-gray-600 rounded-lg p-4 cursor-pointer hover:border-ark-orange transition-all duration-300 position-option" data-position="1rush">
+                            <div class="flex items-center space-x-3">
+                                <input type="radio" name="position" value="1rush" required class="w-5 h-5 text-ark-orange bg-ark-gray border-ark-orange focus:ring-ark-orange">
+                                <div>
+                                    <h4 class="font-bold text-ark-orange">1º Rush</h4>
+                                    <p class="text-sm text-gray-300">Primeiro a entrar no combate</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-ark-gray border-2 border-gray-600 rounded-lg p-4 cursor-pointer hover:border-ark-orange transition-all duration-300 position-option" data-position="2rush">
+                            <div class="flex items-center space-x-3">
+                                <input type="radio" name="position" value="2rush" required class="w-5 h-5 text-ark-orange bg-ark-gray border-ark-orange focus:ring-ark-orange">
+                                <div>
+                                    <h4 class="font-bold text-ark-orange">2º Rush</h4>
+                                    <p class="text-sm text-gray-300">Segundo Rush Acompanhando o primeiro rush.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-ark-gray border-2 border-gray-600 rounded-lg p-4 cursor-pointer hover:border-ark-orange transition-all duration-300 position-option" data-position="intermediario">
+                            <div class="flex items-center space-x-3">
+                                <input type="radio" name="position" value="intermediario" required class="w-5 h-5 text-ark-orange bg-ark-gray border-ark-orange focus:ring-ark-orange">
+                                <div>
+                                    <h4 class="font-bold text-ark-orange">Intermediário</h4>
+                                    <p class="text-sm text-gray-300">Granadeiro usuário de M79</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-ark-gray border-2 border-gray-600 rounded-lg p-4 cursor-pointer hover:border-ark-orange transition-all duration-300 position-option" data-position="suporte">
+                            <div class="flex items-center space-x-3">
+                                <input type="radio" name="position" value="suporte" required class="w-5 h-5 text-ark-orange bg-ark-gray border-ark-orange focus:ring-ark-orange">
+                                <div>
+                                    <h4 class="font-bold text-ark-orange">Suporte</h4>
+                                    <p class="text-sm text-gray-300">Apoio e cobertura da equipe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-ark-orange">Discord</label>
+                    <input type="text" name="discord" required placeholder="SeuNome#1234" class="w-full px-4 py-3 bg-ark-gray border border-ark-orange rounded-lg focus:outline-none focus:ring-2 focus:ring-ark-orange text-white">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-ark-orange">Experiência Anterior</label>
+                    <textarea name="experiencia" rows="4" required placeholder="Conte sobre sua experiência em equipes, torneios e conquistas..." class="w-full px-4 py-3 bg-ark-gray border border-ark-orange rounded-lg focus:outline-none focus:ring-2 focus:ring-ark-orange text-white resize-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-ark-orange">Por que quer entrar na ArkSouls?</label>
+                    <textarea name="motivacao" rows="3" required placeholder="Explique sua motivação..." class="w-full px-4 py-3 bg-ark-gray border border-ark-orange rounded-lg focus:outline-none focus:ring-2 focus:ring-ark-orange text-white resize-none"></textarea>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" id="terms" required class="w-5 h-5 text-ark-orange bg-ark-gray border-ark-orange rounded focus:ring-ark-orange">
+                    <label for="terms" class="text-sm">Concordo com os termos e comprometo-me com os treinos regulares</label>
+                </div>
+
+                <button type="submit" class="w-full bg-ark-orange hover:bg-ark-orange-dark text-ark-black font-bold py-4 px-8 rounded-lg text-xl glow-orange transition-all duration-300 transform hover:scale-105">
+                    ENVIAR CANDIDATURA
+                </button>
+            </form>
+
+            <!-- Modal de Sucesso -->
+            <div id="successModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+                <div class="bg-ark-gray p-8 rounded-lg border-2 border-ark-orange max-w-md mx-4">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h4 class="text-2xl font-bold text-ark-orange mb-4">Candidatura Enviada!</h4>
+                        <p class="mb-6">Sua inscrição foi recebida com sucesso. Nossa equipe analisará seu perfil e entrará em contato em até 48 horas.</p>
+                        <button onclick="closeModal()" class="bg-ark-orange hover:bg-ark-orange-dark text-ark-black font-bold py-2 px-6 rounded-lg">
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ark-gray border-t-2 border-ark-orange py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="w-8 h-8 bg-ark-orange rounded flex items-center justify-center">
+                    <span class="text-sm font-black text-ark-black">AS</span>
+                </div>
+                <span class="text-xl font-bold">ArkSouls</span>
+            </div>
+            <p class="text-gray-400">© 2025 ArkSouls Team. Todos os direitos reservados.</p>
+            <p class="text-sm text-gray-500 mt-2">Contato: arksoulsgg20@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('recruitmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coletar dados do formulário
+            const formData = new FormData(e.target);
+            const nome = formData.get('nome') || e.target.querySelector('input[type="text"]').value;
+            const idade = formData.get('idade') || e.target.querySelector('input[type="number"]').value;
+            const rank = formData.get('rank') || e.target.querySelector('select').value;
+            const posicao = formData.get('position');
+            const discord = formData.get('discord') || e.target.querySelector('input[placeholder*="SeuNome"]').value;
+            const experiencia = formData.get('experiencia') || e.target.querySelector('textarea[placeholder*="experiência"]').value;
+            const motivacao = formData.get('motivacao') || e.target.querySelector('textarea[placeholder*="motivação"]').value;
+            
+            // Criar mensagem para WhatsApp
+            const mensagem = `🎮 *NOVA CANDIDATURA - ARKSOULS* 🎮
+
+👤 *Nome:* ${nome}
+🎂 *Idade:* ${idade} anos
+🏆 *Rank:* ${rank}
+⚔️ *Posição:* ${posicao}
+💬 *Discord:* ${discord}
+
+📝 *Experiência:*
+${experiencia}
+
+💭 *Motivação:*
+${motivacao}
+
+---
+Candidatura enviada pelo site ArkSouls`;
+            
+            // Codificar mensagem para URL
+            const mensagemCodificada = encodeURIComponent(mensagem);
+            const numeroWhatsApp = '5581996890017';
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+            
+            // Simular envio
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'ENVIANDO...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Abrir WhatsApp
+                window.open(urlWhatsApp, '_blank', 'noopener,noreferrer');
+                
+                // Mostrar modal de sucesso
+                document.getElementById('successModal').classList.remove('hidden');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                e.target.reset();
+                
+                // Resetar seleção de posições
+                document.querySelectorAll('.position-option').forEach(opt => {
+                    opt.classList.remove('border-ark-orange', 'glow-orange');
+                    opt.classList.add('border-gray-600');
+                });
+            }, 2000);
+        });
+
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // Interação com as opções de posição
+        document.querySelectorAll('.position-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove seleção anterior
+                document.querySelectorAll('.position-option').forEach(opt => {
+                    opt.classList.remove('border-ark-orange', 'glow-orange');
+                    opt.classList.add('border-gray-600');
+                });
+                
+                // Adiciona seleção atual
+                this.classList.remove('border-gray-600');
+                this.classList.add('border-ark-orange', 'glow-orange');
+                
+                // Marca o radio button
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+            });
+        });
+
+        // Smooth scroll para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9844ac170735f1c3',t:'MTc1ODc0MTk3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
